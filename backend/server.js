@@ -421,7 +421,11 @@ app.get('/api/translate', async (req, res) => {
       mr: 'Marathi',
       gu: 'Gujarati',
       pa: 'Punjabi',
-      as: 'Assamese'
+      as: 'Assamese',
+      fr: 'French',
+      es: 'Spanish',
+      de: 'German'
+
     };
 
     const targetLanguage = String(target).trim().toLowerCase();
