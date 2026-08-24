@@ -16,7 +16,7 @@ async function loadState(state) {
 
     try {
        const response = await fetch(
-    `http://localhost:8000/api/destinations/state/${encodeURIComponent(state)}`
+    `https://soa-ideathon-6d0g.onrender.com/api/destinations/state/${encodeURIComponent(state)}`
 );  
         const data = await response.json();
 

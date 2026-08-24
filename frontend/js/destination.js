@@ -2,7 +2,7 @@
 // TOURSPhERE DESTINATION PAGE
 // ======================================================
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://soa-ideathon-6d0g.onrender.com";
 
 document.addEventListener("DOMContentLoaded", loadDestination);
 

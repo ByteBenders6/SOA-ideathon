@@ -66,7 +66,7 @@ const aiRecommendation =
 // ---------------------------------------------------------
 
 const TOURSPHERE_API =
-    "http://localhost:8000";
+    "https://soa-ideathon-6d0g.onrender.com";
 
 
 // =========================================================
@@ -2143,7 +2143,7 @@ document.addEventListener("DOMContentLoaded", function () {
             try {
 
                 const apiURL =
-                    "http://localhost:8000/api/translate" +
+                    "https://soa-ideathon-6d0g.onrender.com/api/translate" +
                     "?text=" +
                     encodeURIComponent(text) +
                     "&target=" +
