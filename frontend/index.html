@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"content="width=device-width,initial-scale=1.">
+
+    <title>TourSphere</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect"href="https://fonts.googleapis.com">
+ 
+    <link rel="preconnect"href="https://fonts.gstatic.com" crossorigin>       
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+     
+    <!--bootstrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- TOURSPHERE MINIMAL LOADER -->
+
+<div id="ts-loader">
+
+    <div class="ts-loader-glow"></div>
+
+    <div class="ts-loader-content">
+
+        <div class="ts-loader-symbol">✦</div>
+
+        <h1>TourSphere</h1>
+
+        <div class="ts-loader-line">
+            <span></span>
+        </div>
+
+        <p id="ts-loader-message">
+            Discovering the extraordinary...
+        </p>
+
+        <div class="ts-loader-percent">
+            <span id="ts-loader-percent">0</span>%
+        </div>
+
+    </div>
+
+</div>
+
+<!-- END TOURSPHERE LOADER -->
+
+    <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container-fluid px-4">
+
+        <a class="navbar-brand logo" href="#">
+            <i class="fa-solid fa-compass"></i>
+            TourSphere
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+            id="navbarNav">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                   <a class="nav-link active"
+   href="#"
+   onclick="sessionStorage.setItem('tsSkipHomeLoader', 'true')">
+    Home
+</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="explore.html">Explore</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="favorites.html">Favorites</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#hidden-gems">Hidden Gems</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- Hero Section -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-overlay">
+
+        <div class="container hero-content">
+
+            <p class="hero-label">
+                🌍 AI Powered Tourism Platform
+            </p>
+
+            <h1>
+                Discover Places
+                <span>Beyond the Tourist Trail</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Travel where algorithms don't send everyone else.
+
+                Every journey is crafted around you-not the crowd.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" id= "start-planning-btn" class="btn btn-success btn-lg">
+
+                    Start Planning
+
+                </a>
+
+                <a href="#hidden-gems" class="btn btn-outline-light btn-lg">
+
+                    Hidden Gems
+
+                </a>
+
+            </div>
+
+        </div>
+ <div class="floating-card">
+
+            <div class="card-top">
+                ✨ AI Pick
+            </div>
+
+            <h4>Hidden Meghalaya</h4>
+
+            <p>Peaceful • Offbeat • Scenic</p>
+
+            <div class="rating">
+                ⭐ 4.9 • 2.4K Explorers
+            </div>
+    </div>
+
+</section>
+
+<section id="hidden-gems"
+class="hidden-gems">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <p class="section-tag">✨ HIDDEN GEMS</p>
+
+            <h2>Places Most Tourists Never Discover</h2>
+
+            <p>
+                Handpicked destinations powered by AI and loved by explorers.
+            </p>
+        </div>
+
+        <div class="gems-grid">
+
+            <!-- CARD 1 -->
+
+            <div class="gem-card" style="animation-delay:.2s">
+
+                <img src="images/Meghalaya.jpg" alt="Meghalaya">
+
+                <div class="gem-content">
+
+                    <span class="ai-badge">AI PICK</span>
+
+                    <h3>Hidden Meghalaya</h3>
+
+                    <p>Waterfalls • Forests • Peaceful</p>
+
+                    <div class="gem-info">
+                        <span>⭐ 4.9</span>
+                        <span>5 Days</span>
+                        <span>₹12,999</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="gem-card" style="animation-delay:.4s">
+
+                <img src="images/ladakh.jpg" alt="Ladakh">
+
+                <div class="gem-content">
+
+                    <span class="ai-badge">TRENDING</span>
+
+                    <h3>Hidden Ladakh</h3>
+
+                    <p>Mountains • Lakes • Adventure</p>
+
+                    <div class="gem-info">
+                        <span>⭐ 4.8</span>
+                        <span>7 Days</span>
+                        <span>₹15,999</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="gem-card" style="animation-delay:.6s">
+
+                <img src="images/valley.jpg" alt="Valley of Flowers">
+
+                <div class="gem-content">
+
+                    <span class="ai-badge">NEW</span>
+
+                    <h3>Valley of Flowers</h3>
+
+                    <p>Nature • Hiking • Scenic</p>
+
+                    <div class="gem-info">
+                        <span>⭐ 4.9</span>
+                        <span>5 Days</span>
+                        <span>₹12,999</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="trip-planner"
+id="trip-planner>"
+    <div class="container">
+
+        <div class="planner-header">
+
+            <span class="planner-tag">
+                🤖 AI TRAVEL CONCIERGE
+            </span>
+
+            <h2>Hello, Explorer! 👋</h2>
+
+            <p>
+                Tell me your dream vacation and let TourSphere AI
+                build the perfect journey for you.
+            </p>
+
+        </div>
+
+        <div class="planner-box">
+
+            <div class="planner-input">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+               <input
+                   type="text"
+                   id="tripInput"
+                   placeholder=""
+                >
+
+            </div>
+
+            <div class="planner-options">
+
+                <button class="planner-btn">💰 Under ₹10k</button>
+
+                <button class="planner-btn">💰 ₹10k - ₹25k</button>
+
+                <button class="planner-btn">💰 ₹25k+</button>
+
+                <button class="planner-btn">👤 Solo</button>
+
+                <button class="planner-btn">❤️ Couple</button>
+
+                <button class="planner-btn">👨‍👩‍👧 Family</button>
+
+                <button class="planner-btn">👥 Friends</button>
+
+            </div>
+            <button class="generate-btn">
+                ✨ Generate My Adventure
+            </button>
+
+           <div class="ai-result">
+
+               <div class="ai-loading">
+
+                   <video
+                      id="pokoVideo"
+                      src="videos/poko_loading.webm"
+                      muted
+                      playsinline
+                      preload="auto">
+                  </video>
+
+                  <div class="poko-message">
+                      Till we wait... let's dance! 🕺
+                  </div>
+            </div>
+
+               <h3>🏔️ AI Recommendation</h3>
+
+               <p id="tripResult">
+                   Your personalized itinerary will appear here.
+               </p>
+
+           </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="mission" id="about">
+
+    <div class="container">
+
+        <div class="mission-content">
+
+            <!-- LEFT SIDE -->
+            <div class="mission-text">
+
+                <span class="planner-tag">
+                    🌍 OUR MISSION
+                </span>
+
+                <h2>
+                    Travel Beyond Tourist Maps
+                </h2>
+
+                <p class="mission-intro">
+                    Tourism shouldn't be one-size-fits-all.
+                    TourSphere helps travelers discover places that
+                    actually match the way they want to travel.
+                </p>
+
+                <p>
+                    From hidden gems and local experiences to
+                    weather-aware itineraries, safer routes and
+                    accessibility insights, TourSphere brings
+                    meaningful travel information together in one
+                    intelligent platform.
+                </p>
+
+                <!-- FEATURE GRID -->
+                <div class="mission-features">
+
+                    <div class="mission-feature">
+                        <span>✨</span>
+                        <div>
+                            <strong>Hidden Gems</strong>
+                            <small>Discover places beyond the usual tourist routes.</small>
+                        </div>
+                    </div>
+
+                    <div class="mission-feature">
+                        <span>🧠</span>
+                        <div>
+                            <strong>Smart Itineraries</strong>
+                            <small>Plans tailored to preferences, budget and time.</small>
+                        </div>
+                    </div>
+
+                    <div class="mission-feature">
+                        <span>🌦️</span>
+                        <div>
+                            <strong>Weather Aware</strong>
+                            <small>Recommendations adapt to changing conditions.</small>
+                        </div>
+                    </div>
+
+                    <div class="mission-feature">
+                        <span>🛡️</span>
+                        <div>
+                            <strong>Safety & Accessibility</strong>
+                            <small>Travel with route, crowd and accessibility insights.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mission-footer">
+                    <span>✦</span>
+                    <p>
+                        Built for smarter exploration, responsible tourism
+                        and experiences that feel truly yours.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="mission-image">
+
+                <img
+                    src="images/traveller.jpg"
+                    alt="Traveller discovering a destination"
+                >
+
+                <div class="mission-image-overlay">
+                    <span>EXPLORE DIFFERENTLY</span>
+                    <strong>Go beyond the obvious.</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Navbar End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <!-- ================= TOURSPHERE TRANSLATOR ================= -->
+
+<button
+    id="translatorFloatBtn"
+    class="translator-float-btn"
+    title="Translator"
+    type="button"
+    onclick="document.getElementById('translatorPopup').classList.toggle('show')"
+>
+    🌐
+</button>
+
+<div id="translatorPopup" class="translator-popup">
+
+    <div class="translator-header">
+        <div>
+            <strong>🌐 TourSphere Translator</strong>
+            <small>Translate anything while you explore.</small>
+        </div>
+
+        <button
+    id="closeTranslator"
+    class="translator-close"
+    type="button"
+    onclick="document.getElementById('translatorPopup').classList.remove('show')"
+>
+    ×
+</button>
+    </div>
+
+    <textarea
+        id="translatorInput"
+        placeholder="Type or paste text to translate..."
+        rows="4"
+    ></textarea>
+
+    <select id="translatorLanguage">
+        <option value="hi">Hindi</option>
+        <option value="or">Odia</option>
+        <option value="bn">Bengali</option>
+        <option value="ta">Tamil</option>
+        <option value="te">Telugu</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+    </select>
+
+    <button id="translatorSubmit" class="translator-submit">
+        🌐 Translate
+    </button>
+
+    <div id="translatorResult" class="translator-result">
+        Your translation will appear here.
+    </div>
+
+</div>
+
+<!-- ========================================================== -->
+</body>
+</html>

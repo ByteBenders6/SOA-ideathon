@@ -1,0 +1,4695 @@
+/* ===== GOOGLE FONT ===== */
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: #07131a;
+}
+
+/* ===== NAVBAR ===== */
+
+.custom-navbar {
+     background:transparent;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
+
+    width:92%;
+
+    margin:24px auto;
+
+    left:0;
+
+    right:0;
+
+    border-radius:999px;
+
+    padding:3px 0px;
+
+    box-shadow: none;
+
+    border:none;
+
+    transition:.4s ease;
+
+    animation: navFade .8s ease forwards;
+}
+
+@keyframes navFade{
+
+from{
+    opacity:0;
+    transform:translateY(-30px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+}
+
+/* ===== LOGO ===== */
+
+.logo{
+    font-size:36px;
+    font-weight:800;
+    margin-left:-19px;
+    color:white !important;
+}
+
+.logo i{
+    color:#2dd4bf;
+    margin-right:8px;
+}
+
+/* ===== LINKS ===== */
+
+.nav-link{
+
+    color:white !important;
+
+    margin-left:8px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    padding: 10px 18px
+
+}
+
+.nav-link:hover{
+
+    color:#2dd4bf !important;
+
+}
+/* ================= HERO ================= */
+
+.hero {
+
+    height: 100vh;
+    overflow:hidden;
+    will-change:background-position;
+    background: url("../images/hero.jpg") center center/cover no-repeat;
+
+    position: relative;
+    animation:heroZoom 10s ease-in-out infinite alternate;
+    z-index:1;
+
+}
+@keyframes heroZoom{
+
+from{
+    background-size:100%;
+}
+
+to{
+    background-size:108%;
+}
+}
+
+.hero-overlay {
+
+    width: 100%;
+    height: 100%;
+    position:relative;
+    background:linear-gradient(to bottom,
+    rgba(5,10,18,.25) 0%,
+    rgba(5,10,18,.45) 45%,
+    rgba(5,10,18,.70) 75%,
+    #07111d 100%
+);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.hero-content{
+
+    text-align:center;
+    max-width: 1200px;
+    color:white;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-label{
+
+    color:#2dd4bf;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+}
+
+.hero span{
+
+    display:block;
+
+    color:#2dd4bf;
+
+}
+
+.hero-description{
+
+    font-size:20px;
+
+    color:#d1d5db;
+
+    margin-top:25px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons {
+    position: relative;
+    z-index: 20;
+}
+
+.hero-buttons .btn {
+    margin: 10px;
+    position: relative;
+    z-index: 21;
+    pointer-events: auto;
+}
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+.floating-card{
+
+    position:absolute;
+
+    right:40px;
+    top:auto;
+    bottom:20px;
+    z-index: 5;
+    width:260px;
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+
+    animation:floatCard 4s ease-in-out infinite;
+    
+
+}
+.floating-card h4{
+
+    margin:12px 0 8px;
+
+    font-size:22px;
+
+}
+.floating-card p{
+
+    color:#d1d5db;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+.card-top{
+
+    color:#2dd4bf;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
+
+}
+.rating{
+
+    font-size:14px;
+
+    color:#facc15;
+
+}
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+.hidden-gems{
+
+    background:transparent;
+    margin-top:-150px;
+    position:relative;
+    z-index:0;
+
+    padding:120px 0;
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1s ease;
+
+}
+.hidden-gems.show{
+     opacity:1;
+
+    transform:translateY(0);
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+.section-tag{
+
+    color:#2dd4bf;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+.section-heading h2{
+
+    color:white;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+}
+.section-heading p{
+
+    color:#b5c4d6;
+
+    font-size:18px;
+
+}
+.gems-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+.gem-card{
+
+    background:#101c2d;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:transform .5s ease,
+           box-shadow .5s ease,
+           border .5s ease;
+
+    cursor:pointer;
+    opacity:0;
+
+    transform:translateY(70px);
+
+    animation:cardReveal .8s ease forwards;
+
+}
+.gem-card:hover{
+    transform:translateY(-15px) scale(1.02);
+    box-shadow:0 25px 60px rgba(45,212,191,.25);
+    border:1px solid rgba(45,212,191,.35);
+}
+@keyframes cardReveal{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+.gem-card img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    transition:transform.7s ease;
+}
+.gem-card:hover img{
+    transform:scale(1.08);
+}
+.gem-content{
+
+    padding:25px;
+
+}
+.gem-content h3{
+
+    color:white;
+
+    font-size:26px;
+
+    margin:18px 0 12px;
+
+}
+.gem-content p{
+
+    color:#b5c4d6;
+
+}
+.gem-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:20px;
+
+    color:white;
+
+}
+.ai-badge{
+    background: #2dd4bf;
+    color: #07111d;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gem-card:hover{
+
+    transform:translateY(-18px) scale(1.04);
+
+    box-shadow:
+    0 25px 70px rgba(45,212,191,.35);
+
+    border:1px solid rgba(45,212,191,.45);
+
+}
+
+.gem-card:hover img{
+
+    transform:scale(1.15);
+
+}
+.custom-navbar.scrolled{
+
+    background:rgba(7,17,29,.75);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    padding:8px 0;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+@keyframes cardReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/* ================= AI TRIP PLANNER ================= */
+
+.trip-planner{
+     padding:140px 0;
+    background:
+        radial-gradient(circle at 15% 30%, rgba(45,212,191,.10), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(59,130,246,.10), transparent 35%),
+        #07111d;
+    position:relative;
+    overflow:hidden;
+}
+
+.planner-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.planner-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: fit-content;
+    margin: 0 auto 22px;
+
+    padding: 12px 24px;
+
+    background: rgba(45,212,191,.15);
+    color: #2dd4bf;
+
+    border: 1px solid rgba(45,212,191,.40);
+    border-radius: 50px;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+
+    text-align: center;
+    white-space: nowrap;
+
+    position: relative;
+    left: -20px;
+}
+
+.planner-header h2 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 0 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.planner-header p{
+    color:#b8c5d1;
+    font-size:1.1rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+.planner-box{
+    max-width:850px;
+    margin:55px auto 0;
+    padding:32px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.035)
+    );
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
+.planner-input{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    width:100%;
+    box-sizing:border-box;
+
+    padding:8px 10px 8px 20px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(8,25,48,.96),
+        rgba(10,40,55,.92)
+    );
+
+    border:1px solid rgba(45,212,191,.45);
+    border-radius:20px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+        0 0 18px rgba(45,212,191,.08),
+        inset 0 0 25px rgba(20,100,130,.08);
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ========================================= */
+/*          ROAMING NEON LIGHT                */
+/* ========================================= */
+
+.planner-input::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:3px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #14b8a6,
+        #67e8f9,
+        #2dd4bf,
+        transparent
+    );
+
+    box-shadow:
+        0 0 6px #2dd4bf,
+        0 0 14px #2dd4bf,
+        0 0 28px rgba(45,212,191,.65);
+
+    z-index:1;
+
+    pointer-events:none;
+
+    animation:
+        searchBarRoam 5s linear infinite;
+}
+
+
+/* ========================================= */
+/*        KEEP SEARCH CONTENT VISIBLE         */
+/* ========================================= */
+
+.planner-input > *{
+    position:relative;
+    z-index:2;
+}
+
+
+/* ========================================= */
+/*             MAGIC WAND ICON                */
+/* ========================================= */
+
+.planner-input i{
+    flex-shrink:0;
+
+    color:#2dd4bf;
+
+    font-size:22px;
+
+    text-shadow:
+        0 0 8px rgba(45,212,191,.65);
+
+    transition:
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+
+/* ========================================= */
+/*              SEARCH INPUT                  */
+/* ========================================= */
+
+.planner-input input{
+    flex:1;
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    font-size:16px;
+    font-family:inherit;
+
+    padding:10px 5px;
+}
+
+
+/* Placeholder */
+
+.planner-input input::placeholder{
+    color:rgba(255,255,255,.55);
+
+    transition:
+        color .3s ease;
+}
+
+
+/* When user clicks the search bar */
+
+.planner-input:focus-within{
+    border-color:rgba(45,212,191,.75);
+
+    box-shadow:
+        0 0 20px rgba(45,212,191,.16),
+        0 0 40px rgba(45,212,191,.08),
+        inset 0 0 25px rgba(45,212,191,.08);
+}
+
+
+.planner-input:focus-within i{
+    color:#67e8f9;
+
+    text-shadow:
+        0 0 8px #2dd4bf,
+        0 0 18px rgba(45,212,191,.7);
+}
+
+
+.planner-input:focus-within input::placeholder{
+    color:rgba(255,255,255,.72);
+}
+
+
+/* ========================================= */
+/*          NEON TRAVEL ANIMATION             */
+/* ========================================= */
+
+@keyframes searchBarRoam{
+
+    /* ───────── TOP ───────── */
+
+    0%{
+        left:-120px;
+        top:0;
+        width:120px;
+        height:3px;
+    }
+
+    20%{
+        left:calc(100% - 120px);
+        top:0;
+        width:120px;
+        height:3px;
+    }
+
+
+    /* ───────── RIGHT ───────── */
+
+    25%{
+        left:calc(100% - 3px);
+        top:-120px;
+        width:3px;
+        height:120px;
+    }
+
+    45%{
+        left:calc(100% - 3px);
+        top:calc(100% - 120px);
+        width:3px;
+        height:120px;
+    }
+
+
+    /* ───────── BOTTOM ───────── */
+
+    50%{
+        left:calc(100% + 120px);
+        top:calc(100% - 3px);
+        width:120px;
+        height:3px;
+    }
+
+    70%{
+        left:-120px;
+        top:calc(100% - 3px);
+        width:120px;
+        height:3px;
+    }
+
+
+    /* ───────── LEFT ───────── */
+
+    75%{
+        left:0;
+        top:calc(100% + 120px);
+        width:3px;
+        height:120px;
+    }
+
+    95%{
+        left:0;
+        top:-120px;
+        width:3px;
+        height:120px;
+    }
+
+
+    /* Back to the top */
+
+    100%{
+        left:-120px;
+        top:0;
+        width:120px;
+        height:3px;
+    }
+}
+.planner-options{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+}
+.planner-btn{
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.planner-btn:hover{
+
+    background:#2dd4bf;
+
+    color:#07111d;
+
+    transform:translateY(-4px);
+}
+
+.generate-btn{
+
+    display:none;
+
+    margin:auto;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:#2dd4bf;
+
+    color:#07111d;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.generate-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 35px rgba(45,212,191,.45);
+}
+.ai-result{
+
+    margin-top:35px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    display:none;
+
+    animation:fadeUp .7s ease;
+}
+
+.ai-result h3{
+
+    color:#2dd4bf;
+
+    margin-bottom:15px;
+}
+
+.ai-result p{
+
+    color:white;
+
+    line-height:1.8;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.ai-loading{
+
+    position: relative;
+    min-height: 230px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 40px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(45, 212, 191, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(45, 212, 191, 0.08),
+        inset 0 0 30px rgba(45, 212, 191, 0.03);
+
+    overflow: hidden;
+}
+.ai-loading::before {
+    content: "✦ TourSphere AI is crafting your journey...";
+    
+    position: absolute;
+    top: 35px;
+    left: 40px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #2dd4bf;
+
+    letter-spacing: 0.3px;
+}
+/* ================================
+   POKO AI LOADING ANIMATION
+   ================================ */
+
+.ai-loading {
+    text-align: center;
+    padding: 10px 20px 20px;
+}
+
+#pokoVideo {
+    position: absolute;
+
+    width: 80px;
+    height: 90px;
+
+    object-fit: contain;
+
+    left: 50px;
+    top: 50%;
+    
+
+    transform: translateY(-50%);
+
+    z-index: 3;
+
+    filter:none;
+}
+
+.poko-message {
+    position: absolute;
+
+    left: 40px;
+    bottom: 45px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #2dd4bf !important;
+    opacity: 1;
+
+    z-index: 10;
+}
+.poko-message,
+.poko-message *{color: #2dd4bf !important}
+
+.poko-message::first-line {
+    color: #2dd4bf !important;
+}
+@keyframes pulseAI{
+
+    0%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.4;
+    }
+
+}
+/* ================= OUR MISSION ================= */
+
+.mission{
+    padding:120px 0;
+    background:#07111d;
+}
+
+.mission-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+}
+.mission-text{
+    flex: 1;
+}
+.mission-text h2{
+    color:#ffffff;
+}
+
+.mission-text p{
+    color:#b8c7d9;
+}
+
+.mission-list li{
+    color:#ffffff;
+}
+
+
+.mission-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: floatImage 5s ease-in-out infinite;
+    padding-left:30px
+}
+.mission-image img{
+    width: 100%;
+    max-width: 520px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.45),0 0 30px rgba(45,212,191,.18);
+    transition: all .5s ease;
+    filter: brightness(0.85);            
+}
+.mission-image img:hover{
+    transform: scale(1.03);
+}
+@keyframes floatImage{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-12px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+/* Hide recommendation heading while AI is thinking */
+.ai-result h3 {
+    display: none;
+}
+
+/* Show recommendation after loading is finished */
+.ai-result.loaded h3 {
+    display: block;
+}
+/* =========================================
+   TOURSPHERE - NEW ABOUT / MISSION SECTION
+   ========================================= */
+
+.mission {
+    position: relative;
+    padding: 110px 0 100px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* LEFT SIDE */
+
+.mission-text {
+    position: relative;
+    z-index: 2;
+}
+
+.mission-text .planner-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 20px;
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(45, 212, 191, 0.45);
+    border-radius: 50px;
+
+    background: rgba(45, 212, 191, 0.08);
+    color: #2dd4bf;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.mission-text h2 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.mission-text p {
+    margin: 0 0 20px;
+
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+/* FEATURE GRID */
+
+.mission-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.mission-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    transition: 0.3s ease;
+}
+
+.mission-feature:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 212, 191, 0.35);
+    background: rgba(45, 212, 191, 0.06);
+}
+
+.mission-feature > span {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.mission-feature strong {
+    display: block;
+    margin-bottom: 4px;
+
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.mission-feature small {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* BOTTOM MESSAGE */
+
+.mission-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mission-footer > span {
+    color: #2dd4bf;
+    font-size: 20px;
+}
+
+.mission-footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 14px;
+}
+
+/* RIGHT IMAGE */
+
+.mission-image {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 480px;
+
+    border-radius: 26px;
+
+    border: 1px solid rgba(45, 212, 191, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.mission-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+/* IMAGE OVERLAY */
+
+.mission-image-overlay {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+
+    padding: 18px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(5, 15, 25, 0.72);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission-image-overlay span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2dd4bf;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.mission-image-overlay strong {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .mission {
+        padding: 90px 20px 70px;
+    }
+
+    .mission-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mission-features {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-image {
+        min-height: 360px;
+    }
+
+    .mission-image img {
+        min-height: 360px;
+    }
+}
+.mission {
+    scroll-margin-top:90px;
+    padding-top:60px !important;
+}
+/* FIX EXPLORE STATE IMAGES */
+
+.state-card img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+}
+
+.state-card {
+    overflow: hidden;
+}
+
+.state-image {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+}
+
+.state-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ===== EXPLORE STATE CARDS ===== */
+
+.state-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.state-card {
+    background: rgba(10, 25, 45, 0.8);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.state-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.state-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.state-content {
+    padding: 25px;
+}
+/* =========================================
+   TOURSPHERE EXPLORE PAGE - FINAL OVERRIDES
+   ========================================= */
+
+/* Main Explore page */
+body {
+    background: #07111f;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.custom-navbar {
+    background: rgba(7, 17, 31, 0.92) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0 !important;
+    z-index: 1000;
+}
+
+.custom-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+.custom-navbar .navbar-brand i {
+    color: #35d6c5;
+}
+
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 0.98rem !important;
+    font-weight: 500 !important;
+    margin-left: 18px;
+    transition: 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: #35d6c5 !important;
+}
+
+/* ================= EXPLORE HERO ================= */
+
+.explore-hero {
+    padding: 150px 0 80px;
+    background:transparent !important;
+}
+
+.explore-hero h1 {
+    color: #ffffff !important;
+    font-size: clamp(2.8rem, 6vw, 5rem) !important;
+    line-height: 1.05 !important;
+    font-weight: 700 !important;
+    letter-spacing: -2px;
+    max-width: 850px;
+    margin-bottom: 22px;
+}
+
+.explore-hero h1 span {
+    color: #35d6c5;
+}
+
+.explore-hero p {
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
+    max-width: 700px;
+}
+
+/* ================= DESTINATION SECTION ================= */
+
+.explore-selection {
+    padding: 70px 0 110px;
+    background:transparent !important;
+}
+
+.explore-selection .container {
+    max-width: 1250px;
+}
+
+.explore-selection h2 {
+    color: #ffffff !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px;
+}
+
+.explore-selection > .container > p {
+    color: rgba(255, 255, 255, 0.68) !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 45px;
+}
+
+/* Section label */
+.explore-selection .section-tag,
+.state-label {
+    color: #35d6c5 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+}
+
+/* ================= STATE GRID ================= */
+
+.state-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* ================= STATE CARD ================= */
+
+.state-card {
+    background: #0c1a2c !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    transition: transform 0.35s ease, border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.state-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(53, 214, 197, 0.45) !important;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= STATE IMAGE ================= */
+
+.state-image {
+    width: 100%;
+    height: 330px !important;
+    overflow: hidden;
+    background: #0c1a2c;
+}
+
+.state-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.5s ease;
+}
+
+.state-card:hover .state-image img {
+    transform: scale(1.05);
+}
+
+/* ================= STATE CONTENT ================= */
+
+.state-content {
+    padding: 30px !important;
+}
+
+.state-content h3 {
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    margin: 8px 0 14px;
+}
+
+.state-content p {
+    color: rgba(255, 255, 255, 0.68) !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 24px;
+}
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore-state-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(53, 214, 197, 0.5) !important;
+    background: rgba(53, 214, 197, 0.08) !important;
+    color: #35d6c5 !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: 0.3s ease;
+}
+
+.explore-state-btn:hover {
+    background: #35d6c5 !important;
+    color: #07111f !important;
+    transform: translateX(4px);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .custom-navbar {
+        padding: 12px 0 !important;
+    }
+
+    .custom-navbar .nav-link {
+        margin-left: 0;
+        padding: 10px 0 !important;
+    }
+
+    .explore-hero {
+        padding: 125px 20px 60px;
+    }
+
+    .explore-hero h1 {
+        font-size: 2.8rem !important;
+    }
+
+    .state-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .state-image {
+        height: 240px !important;
+    }
+
+    .state-content h3 {
+        font-size: 1.7rem !important;
+    }
+}
+/* =========================================
+   EXPLORE PAGE - SPACING & NAVBAR POLISH
+   ========================================= */
+
+/* Reduce the huge empty hero space */
+.explore-hero {
+    padding-top: 125px !important;
+    padding-bottom: 35px !important;
+    min-height: auto !important;
+}
+
+/* Bring destination section closer */
+.explore-selection {
+    padding-top: 25px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Keep the heading from creating unnecessary gaps */
+.explore-selection .section-tag {
+    margin-bottom: 8px !important;
+}
+
+.explore-selection h2 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+.explore-selection > .container > p {
+    margin-bottom: 30px !important;
+}
+/* =========================================
+   EXPLORE PAGE NAVBAR
+   ========================================= */
+
+.explore-navbar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+
+    position: fixed !important;
+    top: 48px !important;
+    left: 4%!important;
+    right: 0% !important;
+    width: 92% !important;
+
+    padding: 3px 0 !important;
+
+    z-index: 9999 !important;
+}
+/* ===== EXPLORE NAVBAR LOGO ===== */
+
+.explore-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+
+    transform: scale(1.18) !important;
+    transform-origin: left center !important;
+}
+
+/* Cyan compass */
+.explore-navbar .navbar-brand i {
+    color: #35d6c5 !important;
+}
+
+/* Navbar links */
+.explore-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin-left: 18px;
+    transition: color 0.3s ease;
+}
+
+.explore-navbar .nav-link:hover,
+.explore-navbar .nav-link.active {
+    color: #35d6c5 !important;
+}
+
+/* Homepage TourSphere logo */
+.custom-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px;
+}
+
+/* Homepage navbar links */
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    margin-left: 18px;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: #35d6c5 !important;
+}
+/* ===== HOMEPAGE NAVBAR — ORIGINAL STYLE ===== */
+
+body .custom-navbar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    padding: 20px 40px !important;
+}
+
+body .custom-navbar .navbar-brand {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+body .custom-navbar .nav-link {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/* ===== EXPLORE NAVBAR — FINAL SIZE/POSITION ===== */
+
+.explore-navbar {
+    transform: translateY(-10px) !important;
+}
+
+.explore-navbar .navbar-brand {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+}
+
+/* Make the entire TourSphere branding visibly larger */
+.custom-navbar .navbar-brand {
+    transform: scale(1.25) !important;
+    transform-origin: left center !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+/* =========================================
+   TOURSPHERE HOMEPAGE NAVBAR - FINAL
+   Glass + Drop/Fade Animation
+   ========================================= */
+
+.custom-navbar {
+    position: fixed !important;
+    top: 24px !important;
+    left: 4% !important;
+    width: 92% !important;
+
+    background: rgba(7, 17, 31, 0.72) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+
+    border-radius: 999px !important;
+
+    opacity: 0;
+    transform: translateY(-45px);
+
+    animation: tourNavbarDrop 1s ease-out forwards !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* Navbar enters from above and fades in */
+@keyframes tourNavbarDrop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-45px);
+    }
+
+    60% {
+        opacity: 0.8;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* BIGGER TOURSPHERE LOGO */
+.custom-navbar .navbar-brand {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+
+    transform: scale(1.25) !important;
+    transform-origin: left center !important;
+}
+
+
+/* Navbar links */
+.custom-navbar .nav-link {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+}
+
+
+.custom-navbar.scrolled {
+    background: rgba(7, 17, 29, 0.75) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    padding: 8px 0 !important;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+
+    /* IMPORTANT: scrolling must NOT move the navbar */
+    transform: translateY(0) !important;
+
+    animation: none !important;
+}.custom-navbar.scrolled {
+    background: rgba(7, 17, 29, 0.75) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    padding: 8px 0 !important;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+
+    /* IMPORTANT: scrolling must NOT move the navbar */
+    transform: translateY(0) !important;
+
+    animation: none !important;
+}
+/* =========================================
+   FINAL HOMEPAGE NAVBAR
+   ========================================= */
+
+.custom-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+
+    z-index: 9999 !important;
+
+    /* Transparent at the top */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+
+    transition:
+        top 0.45s ease,
+        left 0.45s ease,
+        width 0.45s ease,
+        background 0.45s ease,
+        backdrop-filter 0.45s ease,
+        -webkit-backdrop-filter 0.45s ease,
+        border-radius 0.45s ease,
+        box-shadow 0.45s ease !important;
+}
+
+
+/* When the user scrolls */
+.custom-navbar.scrolled {
+    top: 18px !important;
+    left: 4% !important;
+    width: 92% !important;
+
+    background: rgba(7, 17, 31, 0.78) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    border: none !important;
+    outline: none !important;
+
+    border-radius: 999px !important;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+
+    padding: 10px 2% !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+
+    /* Prevent the old weird animation */
+    animation: none !important;
+}
+
+
+/* Bigger TourSphere logo */
+.custom-navbar .navbar-brand {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+
+/* BIGGER TOURSPHERE */
+.custom-navbar .navbar-brand {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    transform: scale(1.25) !important;
+    transform-origin: left center !important;
+}
+
+
+/* NAVIGATION LINKS */
+.custom-navbar .nav-link {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+}
+/* =====================================================
+   TOURSPHERE — FINAL STICKY NAVBAR
+   ===================================================== */
+
+.custom-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    z-index: 99999 !important;
+
+    /* TOP OF PAGE */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+
+    /* THIS CREATES THE SMOOTH DROP */
+    transition:
+        top 0.45s ease,
+        left 0.45s ease,
+        width 0.45s ease,
+        background 0.45s ease,
+        backdrop-filter 0.45s ease,
+        -webkit-backdrop-filter 0.45s ease,
+        border-radius 0.45s ease,
+        box-shadow 0.45s ease !important;
+
+    animation: none !important;
+}
+
+
+/* =====================================================
+   AFTER SCROLLING
+   ===================================================== */
+
+.custom-navbar.scrolled {
+    position: fixed !important;
+
+    /* DROPS DOWN FROM THE TOP */
+    top: 18px !important;
+
+    left: 4% !important;
+    right: auto !important;
+    width: 92% !important;
+
+    /* GLASS */
+    background: rgba(7, 17, 31, 0.78) !important;
+
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+
+    border: none !important;
+    outline: none !important;
+
+    border-radius: 999px !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25) !important;
+
+    opacity: 1 !important;
+
+    transform: translateY(0) !important;
+
+    animation: none !important;
+}
+
+
+/* Bigger TourSphere */
+.custom-navbar .navbar-brand {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+/* ===== ALIGN EXPLORE HERO WITH DESTINATION SECTION ===== */
+
+.explore-hero > .container {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ===== EXPLORE NAVBAR LOGO ALIGNMENT ===== */
+.explore-navbar .navbar-brand {
+    margin-left: -25px !important;
+}
+/* =========================================
+   TOURSPHERE EXPLORE - CINEMATIC BACKGROUND
+   ========================================= */
+
+.explore-cinematic {
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(7, 17, 31, 0.28) 0%,
+            rgba(7, 17, 31, 0.38) 45%,
+            rgba(7, 17, 31, 0.82) 100%
+        ),
+        url("../images/explore-bg.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+   
+}
+
+
+/* Keep the existing sections transparent
+   so the cinematic image can actually be seen */
+
+.explore-cinematic .explore-hero {
+    background: transparent !important;
+}
+
+.explore-cinematic .explore-selection {
+    background: transparent !important;
+}
+
+
+/* Slow cinematic zoom */
+
+@keyframes exploreCinematicZoom {
+
+    0% {
+        background-size: 100% auto;
+    }
+
+    100% {
+        background-size: 108% auto;
+    }
+
+}
+/* CONNECT HERO WITH THE CINEMATIC BACKGROUND */
+
+.explore-cinematic {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(7, 17, 31, 0.25) 0%,
+            rgba(7, 17, 31, 0.38) 50%,
+            rgba(7, 17, 31, 0.85) 100%
+        ),
+        url("../images/explore-bg.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+
+/* Hero stays LARGE and sits on top of the image */
+
+.explore-cinematic .explore-hero {
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hero content stays above the background */
+
+.explore-cinematic .explore-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Destination section continues in the same background */
+
+.explore-cinematic .explore-selection {
+    background: transparent !important;
+    position: relative;
+    z-index: 2;
+}
+/* Make the hero fully part of the cinematic area */
+
+.explore-cinematic .explore-hero {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+}
+
+/* Keep hero content above the temple image */
+.explore-cinematic .explore-hero-content {
+    position: relative;
+    z-index: 3;
+}
+.explore-cinematic .explore-hero-overlay {
+    background: transparent !important;
+}
+.explore-cinematic .explore-hero {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+}
+
+.explore-cinematic .explore-hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.explore-cinematic .explore-hero-overlay {
+    background: transparent !important;
+}
+/* =========================================
+   EXPLORE CINEMATIC BACKGROUND - FINAL
+   ========================================= */
+
+.explore-cinematic {
+    position: relative;
+    overflow: hidden;
+    background: transparent !important;
+}
+
+/* Temple image layer */
+.explore-cinematic::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 17, 31, 0.25),
+            rgba(7, 17, 31, 0.45) 55%,
+            rgba(7, 17, 31, 0.90) 100%
+        ),
+        url("../images/explore-bg.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+
+    animation: cinematicTempleZoom 14s ease-in-out infinite alternate;
+}
+
+/* Everything must sit ABOVE the image */
+
+.explore-cinematic > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Existing hero background must NOT hide the image */
+
+.explore-cinematic .explore-hero {
+    background: transparent !important;
+}
+
+/* Existing hero overlay must NOT cover the text */
+
+.explore-cinematic .explore-hero-overlay {
+    background: transparent !important;
+}
+
+/* Keep hero text clearly above everything */
+
+.explore-cinematic .explore-hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* Destination section also stays transparent */
+
+.explore-cinematic .explore-selection {
+    background: transparent !important;
+}
+
+/* Cinematic movement */
+
+@keyframes cinematicTempleZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+/* ================================
+   EXPLORE PAGE TEXT FADE-IN
+   ================================ */
+
+/* Hero text */
+.explore-hero-content {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: exploreTextFade 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Destination heading text */
+.explore-selection .explore-heading {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: exploreTextFade 1.2s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes exploreTextFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================================
+   DESTINATION CARDS FADE-IN
+   ================================ */
+
+.explore-selection .state-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardFadeIn 1s ease-out forwards;
+}
+
+/* Cards appear one after another */
+.explore-selection .state-card:nth-child(1) {
+    animation-delay: 0.9s;
+}
+
+.explore-selection .state-card:nth-child(2) {
+    animation-delay: 1.1s;
+}
+
+.explore-selection .state-card:nth-child(3) {
+    animation-delay: 1.3s;
+}
+
+.explore-selection .state-card:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.explore-selection .state-card:nth-child(5) {
+    animation-delay: 1.7s;
+}
+
+.explore-selection .state-card:nth-child(6) {
+    animation-delay: 1.9s;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.destination-placeholder {
+    transform: translateX(-55px);
+}
+/* =========================================================
+   FAVORITES PAGE
+   ========================================================= */
+
+.favorites-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 17, 31, 0.82),
+            #07111f 85%
+        );
+    color: #ffffff;
+}
+
+
+/* ================= FAVORITES HERO ================= */
+
+.favorites-hero {
+    padding: 140px 0 80px;
+    animation: favoritesFadeIn 0.9s ease forwards;
+    min-height: 55vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 17, 31, 0.35),
+            #07111f 95%
+        ),
+        url("../images/explore-bg.png") center/cover no-repeat;
+}
+
+.favorites-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #35d6c5;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.favorites-hero h1 {
+    color: #ffffff;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -2px;
+    max-width: 850px;
+    margin-bottom: 16px;
+}
+
+.favorites-hero h1 span {
+    color: #35d6c5;
+}
+
+.favorites-hero p {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+
+/* ================= SAVED DESTINATIONS ================= */
+
+.favorites-section {
+    padding: 70px 0 110px;
+    background: #07111f;
+}
+
+.favorites-heading {
+    margin-bottom: 45px;
+}
+
+.favorites-heading > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #35d6c5;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.favorites-heading h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.favorites-heading p {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 1rem;
+}
+
+
+/* ================= EMPTY FAVORITES ================= */
+
+.favorites-empty {
+    max-width: 720px;
+    margin: 20px auto 0;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: favoritesFadeIn 0.9s ease forwards;
+}
+
+.empty-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(53, 214, 197, 0.10);
+    border: 1px solid rgba(53, 214, 197, 0.25);
+
+    color: #35d6c5;
+    font-size: 1.8rem;
+
+    box-shadow: 0 0 30px rgba(53, 214, 197, 0.08);
+}
+
+.favorites-empty h3 {
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+.favorites-empty p {
+    max-width: 520px;
+    margin: 0 auto 30px;
+
+    color: rgba(255, 255, 255, 0.60);
+    line-height: 1.7;
+}
+
+
+/* ================= EXPLORE BUTTON ================= */
+
+.favorites-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    color: #07111f;
+    background: #35d6c5;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.favorites-btn:hover {
+    color: #07111f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(53, 214, 197, 0.25);
+}
+
+
+/* ================= FADE ANIMATION ================= */
+
+@keyframes favoritesFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .favorites-hero {
+        padding: 150px 25px 70px;
+    }
+
+    .favorites-hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .favorites-section {
+        padding: 55px 25px 80px;
+    }
+
+    .favorites-heading h2 {
+        font-size: 2rem;
+    }
+
+    .favorites-empty {
+        padding: 45px 25px;
+    }
+
+}
+.favorites-hero .container {
+    transform: translate(-50px, -15px);
+}
+.custom-navbar .navbar-brand {
+    transform: scale(1.08);
+    transform-origin: left center;
+}
+/* Connected AI result cards */
+.ai-destination-card {
+    margin: 14px 0;
+    padding: 16px;
+    border: 1px solid rgba(94, 234, 212, .22);
+    border-radius: 16px;
+    background: rgba(255,255,255,.04);
+    text-align: left;
+}
+.ai-destination-card h3 {
+    margin-top: 0;
+}
+/* =========================================================
+   DESTINATION LIVE TOOLS - HORIZONTAL LAYOUT
+========================================================= */
+
+.destination-tools {
+    width: 100%;
+    margin-top: 60px;
+    padding: 40px 0;
+}
+
+.tools-header {
+    margin-bottom: 30px;
+}
+
+.tools-eyebrow {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.tools-header h2 {
+    margin: 0 0 8px;
+    font-size: 38px;
+}
+
+.tools-subtitle {
+    margin: 0;
+    opacity: 0.75;
+}
+
+/* Each topic becomes one horizontal row */
+.destination-tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.destination-tool-row {
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 20px 24px;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.035);
+}
+
+/* Left side = information */
+.tool-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+
+.tool-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 25px;
+
+    border-radius: 14px;
+    background: rgba(255,255,255,0.08);
+}
+
+.tool-info h3 {
+    margin: 0 0 5px;
+    font-size: 21px;
+}
+
+.tool-info p {
+    margin: 0;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.tool-inline-content {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+/* RIGHT SIDE = API LINK */
+.tool-action {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 17px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: inherit;
+
+    background: rgba(255,255,255,0.06);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tool-action:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
+}
+
+/* Language selector */
+.language-select {
+    margin-top: 10px;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+    color: inherit;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .destination-tool-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tool-action {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   TOURSPHERE GLOBAL TRANSLATOR
+   ========================================================= */
+
+.translator-float-btn {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(17,27,42,0.92);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease;
+}
+
+.translator-float-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.translator-popup {
+    position: fixed;
+    right: 28px;
+    bottom: 100px;
+    width: 360px;
+    max-width: calc(100vw - 40px);
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(13,23,38,0.97);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    backdrop-filter: blur(18px);
+    z-index: 9998;
+
+    display: none;
+}
+
+.translator-popup.show {
+    display: block;
+    animation: translatorPopupIn 0.2s ease;
+}
+
+@keyframes translatorPopupIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.translator-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.translator-header strong {
+    display: block;
+    color: white;
+    font-size: 1.05rem;
+}
+
+.translator-header small {
+    display: block;
+    margin-top: 5px;
+    color: rgba(255,255,255,0.6);
+}
+
+.translator-close {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#translatorInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #111b2a;
+    color: white;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+    margin-bottom: 12px;
+}
+
+#translatorInput::placeholder {
+    color: rgba(255,255,255,0.45);
+}
+
+#translatorLanguage {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #111b2a;
+    color: white;
+    margin-bottom: 12px;
+}
+
+#translatorLanguage option {
+    background: #111b2a;
+    color: white;
+}
+
+.translator-submit {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: #1d2a3d;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.translator-submit:hover {
+    background: #26364d;
+}
+
+.translator-result {
+    margin-top: 14px;
+    padding: 13px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    min-height: 20px;
+}
+
+/* =========================================================
+   TOURSPHERE DESTINATION PAGE
+   PREMIUM DESTINATION UI
+   ========================================================= */
+
+/* ---------- DESTINATION HEADER ---------- */
+
+.destination-header {
+    position: relative;
+    padding: 150px 0 85px;
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(53, 214, 197, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #07111f 0%,
+            #091827 100%
+        );
+    color: #fff;
+}
+
+.destination-header .container {
+    max-width: 1180px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 45px;
+    padding: 9px 15px;
+
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.035);
+
+    transition: all 0.25s ease;
+}
+
+.back-button:hover {
+    color: #35d6c5;
+    border-color: rgba(53,214,197,0.35);
+    background: rgba(53,214,197,0.06);
+    transform: translateX(-3px);
+}
+
+.destination-title {
+    max-width: 850px;
+}
+
+.destination-title > span {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #35d6c5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.destination-title h1 {
+    margin: 0 0 18px;
+
+    color: #fff;
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    font-weight: 750;
+    line-height: 1.02;
+    letter-spacing: -2.5px;
+}
+
+.destination-title p {
+    max-width: 720px;
+    margin: 0;
+
+    color: rgba(255,255,255,0.68);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   QUICK INFORMATION
+   ========================================================= */
+
+.destination-info {
+    position: relative;
+    z-index: 2;
+
+    margin-top: -35px;
+    padding-bottom: 20px;
+
+    background: transparent;
+}
+
+.destination-info .container {
+    max-width: 1180px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+}
+
+.info-card {
+    min-height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 17px;
+
+    background: rgba(13, 27, 44, 0.88);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(53,214,197,0.28);
+    background: rgba(17,35,55,0.94);
+}
+
+.info-card i {
+    margin-bottom: 10px;
+
+    color: #35d6c5;
+    font-size: 17px;
+}
+
+.info-card span {
+    margin-bottom: 5px;
+
+    color: rgba(255,255,255,0.52);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.info-card strong {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   MAIN DESTINATION CONTENT
+   ========================================================= */
+
+.destination-content,
+.destination-main {
+    padding: 70px 0 110px;
+
+    color: #fff;
+    background: #07111f;
+}
+
+.destination-content .container,
+.destination-main .container {
+    max-width: 1180px;
+}
+
+
+/* ---------- SECTION HEADINGS ---------- */
+
+.destination-section {
+    margin-bottom: 75px;
+}
+
+.destination-section > h2,
+.destination-section .section-title {
+    margin-bottom: 25px;
+
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.destination-section > h2::after,
+.destination-section .section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+    height: 3px;
+
+    margin-top: 12px;
+
+    border-radius: 50px;
+
+    background: #35d6c5;
+}
+
+
+/* =========================================================
+   DETAIL CARDS
+   Used by destination.js
+   ========================================================= */
+
+.detail-card {
+    padding: 24px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow: 0 12px 35px rgba(0,0,0,0.13);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(53,214,197,0.24);
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,0.20),
+        0 0 25px rgba(53,214,197,0.035);
+}
+
+.detail-card h3 {
+    margin: 0 0 10px;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.detail-card p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.67);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.detail-card h3 + p {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   WEATHER
+   ========================================================= */
+
+#weatherContent .detail-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 30px;
+}
+
+#weatherContent .detail-card::before {
+    content: "WEATHER";
+
+    position: absolute;
+    top: 22px;
+    right: 25px;
+
+    color: rgba(53,214,197,0.55);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+#weatherContent .detail-card h3 {
+    color: #35d6c5;
+    font-size: 36px;
+    letter-spacing: -1px;
+}
+
+#weatherContent .detail-card p {
+    display: inline-block;
+
+    margin-right: 20px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#aboutContent .detail-card {
+    padding: 30px;
+}
+
+#aboutContent .detail-card h3 {
+    font-size: 22px;
+}
+
+#aboutContent .detail-card p {
+    max-width: 900px;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   TRAVEL INFORMATION
+   ========================================================= */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+#travelContent .detail-card {
+    min-height: 115px;
+}
+
+#travelContent .detail-card h3 {
+    color: rgba(255,255,255,0.56);
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#travelContent .detail-card p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   NEARBY PLACES / HOTELS / RESTAURANTS / HIDDEN GEMS
+   ========================================================= */
+
+#nearbyContent,
+#hotelsContent,
+#restaurantsContent,
+#hiddenGemsContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+#nearbyContent > p,
+#hotelsContent > p,
+#restaurantsContent > p,
+#hiddenGemsContent > p {
+    grid-column: 1 / -1;
+
+    color: rgba(255,255,255,0.55);
+}
+
+#nearbyContent .detail-card,
+#hotelsContent .detail-card,
+#restaurantsContent .detail-card,
+#hiddenGemsContent .detail-card {
+    min-height: 95px;
+}
+
+
+/* =========================================================
+   LIVE DESTINATION TOOLS
+   ========================================================= */
+
+.destination-tools {
+    width: 100%;
+    margin-top: 80px;
+    padding: 55px 0 20px;
+}
+
+.destination-tools .container {
+    max-width: 1180px;
+}
+
+.tools-header {
+    margin-bottom: 30px;
+}
+
+.tools-eyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #35d6c5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.tools-header h2 {
+    margin: 0 0 8px;
+
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.tools-subtitle {
+    color: rgba(255,255,255,0.58);
+    font-size: 14px;
+}
+
+
+/* ---------- TOOL ROW ---------- */
+
+.destination-tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.destination-tool-row {
+    width: 100%;
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 19px 22px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.028);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.destination-tool-row:hover {
+    transform: translateX(3px);
+
+    border-color: rgba(53,214,197,0.25);
+
+    background: rgba(53,214,197,0.035);
+}
+
+
+/* ---------- TOOL LEFT SIDE ---------- */
+
+.tool-info {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+.tool-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 21px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 13px;
+
+    background: rgba(255,255,255,0.055);
+}
+
+.tool-info h3 {
+    margin: 0 0 4px;
+
+    color: #fff;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.tool-inline-content {
+    margin-top: 4px;
+
+    color: rgba(255,255,255,0.58);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* Generated inline places */
+
+.inline-place {
+    display: inline-block;
+
+    margin: 3px 6px 3px 0;
+    padding: 5px 9px;
+
+    color: rgba(255,255,255,0.70);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.035);
+
+    font-size: 12px;
+}
+
+
+/* ---------- TOOL ACTION ---------- */
+
+.tool-action {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 14px;
+
+    color: rgba(255,255,255,0.82) !important;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,0.045);
+
+    transition: all 0.25s ease;
+}
+
+.tool-action:hover {
+    color: #35d6c5 !important;
+
+    border-color: rgba(53,214,197,0.35);
+
+    background: rgba(53,214,197,0.06);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   API URL — KEEP IT SUBTLE
+   ========================================================= */
+
+.api-url {
+    color: rgba(255,255,255,0.28) !important;
+    font-size: 10px !important;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   WIKIPEDIA / MORE INFORMATION
+   ========================================================= */
+
+#wikipediaLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+    padding: 11px 16px;
+
+    color: #35d6c5;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    border: 1px solid rgba(53,214,197,0.20);
+    border-radius: 10px;
+
+    background: rgba(53,214,197,0.045);
+
+    transition: all 0.25s ease;
+}
+
+#wikipediaLink:hover {
+    background: rgba(53,214,197,0.09);
+    border-color: rgba(53,214,197,0.4);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DESTINATION PAGE ANIMATIONS
+   ========================================================= */
+
+.destination-header,
+.destination-info,
+.destination-content,
+.destination-tools {
+    animation: destinationFadeUp 0.8s ease both;
+}
+
+.destination-info {
+    animation-delay: 0.12s;
+}
+
+.destination-content {
+    animation-delay: 0.2s;
+}
+
+.destination-tools {
+    animation-delay: 0.28s;
+}
+
+@keyframes destinationFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #nearbyContent,
+    #hotelsContent,
+    #restaurantsContent,
+    #hiddenGemsContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .destination-header {
+        padding: 125px 20px 70px;
+    }
+
+    .destination-title h1 {
+        font-size: 3rem;
+        letter-spacing: -1.5px;
+    }
+
+    .destination-title p {
+        font-size: 15px;
+    }
+
+    .destination-info {
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #nearbyContent,
+    #hotelsContent,
+    #restaurantsContent,
+    #hiddenGemsContent {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-tool-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .tool-action {
+        width: 100%;
+    }
+
+    .tool-info {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .detail-card {
+        padding: 20px;
+    }
+
+    .tools-header h2 {
+        font-size: 27px;
+    }
+}
+/* =========================================================
+   FINAL DESTINATION PAGE POLISH
+   ========================================================= */
+
+
+/* =========================================================
+   HOTEL / RESTAURANT / NEARBY / GEM CARDS
+   Make the actual names white + bold
+   ========================================================= */
+
+#hotelsContent .detail-card p,
+#restaurantsContent .detail-card p,
+#nearbyContent .detail-card p,
+#hiddenGemsContent .detail-card p {
+
+    color: #ffffff !important;
+
+    font-size: 16px !important;
+
+    font-weight: 650 !important;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* Hidden Gem names are already h3 when they come
+   from the destination data */
+
+#hiddenGemsContent .detail-card h3 {
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+
+    font-weight: 700 !important;
+
+    margin: 0;
+}
+
+
+/* Make all these cards feel consistent */
+
+#hotelsContent .detail-card,
+#restaurantsContent .detail-card,
+#nearbyContent .detail-card,
+#hiddenGemsContent .detail-card {
+
+    min-height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 22px 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* Slight hover effect */
+
+#hotelsContent .detail-card:hover,
+#restaurantsContent .detail-card:hover,
+#nearbyContent .detail-card:hover,
+#hiddenGemsContent .detail-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(53,214,197,0.28);
+
+    background: rgba(20,38,58,0.95);
+}
+
+
+/* =========================================================
+   EXPLORE SMARTER
+   ========================================================= */
+
+.destination-tools {
+
+    width: min(1180px, calc(100% - 48px));
+
+    margin: 90px auto 0;
+
+    padding: 0 0 90px;
+
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.destination-tools .tools-header {
+
+    margin-bottom: 32px;
+
+    padding-left: 4px;
+}
+
+
+.destination-tools .tools-eyebrow {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #35d6c5 !important;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    letter-spacing: 2.2px;
+
+    text-transform: uppercase;
+}
+
+
+.destination-tools .tools-header h2 {
+
+    margin: 0 0 8px;
+
+    color: #ffffff !important;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+
+    line-height: 1.15;
+}
+
+
+.destination-tools .tools-subtitle {
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.58) !important;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* Small teal line underneath heading */
+
+.destination-tools .tools-header h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 46px;
+
+    height: 3px;
+
+    margin-top: 13px;
+
+    border-radius: 50px;
+
+    background: #35d6c5;
+}
+
+
+/* =========================================================
+   TOOL CARDS
+   ========================================================= */
+
+.destination-tool-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+
+.destination-tool-row {
+
+    width: 100%;
+
+    min-height: 104px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 22px 25px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17,32,50,0.98),
+            rgba(11,25,41,0.98)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.14);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.destination-tool-row:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(53,214,197,0.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(19,39,58,1),
+            rgba(12,30,47,1)
+        );
+
+    box-shadow:
+        0 16px 35px rgba(0,0,0,0.20);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.destination-tool-row .tool-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.destination-tool-row .tool-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 22px;
+
+    border: 1px solid rgba(53,214,197,0.12);
+
+    border-radius: 14px;
+
+    background: rgba(53,214,197,0.06);
+}
+
+
+/* MAIN TOOL TITLE */
+
+.destination-tool-row .tool-info h3 {
+
+    margin: 0 0 6px;
+
+    color: #ffffff !important;
+
+    font-size: 18px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.25;
+}
+
+
+/* Route information */
+
+.destination-tool-row .tool-info p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.62) !important;
+
+    font-size: 14px !important;
+
+    font-weight: 500;
+
+    line-height: 1.55;
+}
+
+
+/* Nearby / hotel / restaurant generated content */
+
+.destination-tool-row .tool-inline-content {
+
+    margin-top: 5px;
+
+    color: rgba(255,255,255,0.68) !important;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    opacity: 1 !important;
+}
+
+
+/* Individual items inside those sections */
+
+.destination-tool-row .inline-place {
+
+    color: #ffffff !important;
+
+    font-size: 13px;
+
+    font-weight: 550;
+
+    margin: 2px 5px 2px 0;
+
+    padding: 5px 8px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,0.035);
+}
+
+
+/* =========================================================
+   RIGHT SIDE BUTTON
+   ========================================================= */
+
+.destination-tool-row .tool-action {
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 11px 17px;
+
+    color: #ffffff !important;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.045);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.destination-tool-row .tool-action:hover {
+
+    transform: translateY(-2px);
+
+    color: #35d6c5 !important;
+
+    border-color: rgba(53,214,197,0.35);
+
+    background: rgba(53,214,197,0.07);
+}
+
+
+/* =========================================================
+   API / MAP TEXT
+   Keep it visible but subtle
+   ========================================================= */
+
+.destination-tool-row .api-url {
+
+    margin-top: 6px !important;
+
+    color: rgba(255,255,255,0.28) !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.4;
+
+    word-break: break-all;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .destination-tools {
+
+        width: calc(100% - 30px);
+
+        margin-top: 70px;
+    }
+
+    .destination-tools .tools-header h2 {
+
+        font-size: 32px;
+    }
+
+    .destination-tool-row {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .destination-tool-row .tool-info {
+
+        width: 100%;
+    }
+
+    .destination-tool-row .tool-action {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}
+/* =====================================================
+   TOURSPHERE — MINIMAL CINEMATIC LOADER
+===================================================== */
+
+#ts-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #03080d;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1.2s cubic-bezier(.65,0,.35,1),
+        visibility 1.2s;
+}
+
+#ts-loader.ts-loader-finished {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* ---------- SOFT LIGHT ---------- */
+
+.ts-loader-glow {
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: rgba(45, 212, 191, .08);
+
+    filter: blur(90px);
+
+    animation: ts-loader-breathe 4s ease-in-out infinite;
+}
+
+
+/* ---------- CONTENT ---------- */
+
+.ts-loader-content {
+    position: relative;
+
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* ---------- SYMBOL ---------- */
+
+.ts-loader-symbol {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(94, 234, 212, .3);
+
+    border-radius: 50%;
+
+    color: #5eead4;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 0 25px rgba(45, 212, 191, .12);
+
+    animation: ts-symbol-breathe 2.5s ease-in-out infinite;
+}
+
+
+/* ---------- TITLE ---------- */
+
+#ts-loader h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    animation: ts-title-in 1.2s .2s ease forwards;
+}
+
+
+/* ---------- LINE ---------- */
+
+.ts-loader-line {
+    position: relative;
+
+    width: 230px;
+    height: 1px;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.1);
+}
+
+
+.ts-loader-line span {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background: #5eead4;
+
+    box-shadow:
+        0 0 10px rgba(45,212,191,.8);
+
+    transition: width .15s linear;
+}
+
+
+/* ---------- MESSAGE ---------- */
+
+#ts-loader-message {
+    margin: 18px 0 0;
+
+    min-height: 22px;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: 14px;
+
+    letter-spacing: .8px;
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+
+/* ---------- PERCENTAGE ---------- */
+
+.ts-loader-percent {
+    margin-top: 12px;
+
+    color: rgba(255,255,255,.3);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes ts-loader-breathe {
+
+    0%,100% {
+        transform: scale(.8);
+        opacity: .45;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: .9;
+    }
+}
+
+
+@keyframes ts-symbol-breathe {
+
+    0%,100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 20px rgba(45,212,191,.1);
+    }
+
+    50% {
+        transform: scale(1.06);
+        box-shadow:
+            0 0 35px rgba(45,212,191,.25);
+    }
+}
+
+
+@keyframes ts-title-in {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    #ts-loader h1 {
+        font-size: 34px;
+    }
+
+    .ts-loader-content {
+        width: 280px;
+    }
+
+    .ts-loader-line {
+        width: 200px;
+    }
+}
+/* =========================================================
+   TOURSPHERE — MODERN DESTINATION CARDS
+========================================================= */
+
+.destination-card-modern {
+    height: 100%;
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 35, 52, 0.96),
+            rgba(8, 19, 31, 0.98)
+        );
+
+    border: 1px solid rgba(94, 234, 212, 0.16);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.destination-card-modern:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(45, 212, 191, 0.45);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(45, 212, 191, 0.08);
+}
+
+
+.destination-card-body {
+    padding: 26px;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.destination-title-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+.destination-name {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* ---------- HEART ---------- */
+
+.favorite-heart-btn {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(94, 234, 212, 0.18);
+
+    border-radius: 50%;
+
+    background: rgba(10, 25, 39, 0.75);
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.favorite-heart-btn:hover {
+    transform: scale(1.1);
+
+    color: #5eead4;
+
+    border-color: rgba(94, 234, 212, 0.55);
+
+    background: rgba(45, 212, 191, 0.08);
+
+    box-shadow:
+        0 0 16px rgba(45, 212, 191, 0.2);
+}
+
+
+.favorite-heart-btn.is-favorite {
+    color: #5eead4;
+
+    border-color: rgba(94, 234, 212, 0.7);
+
+    background: rgba(45, 212, 191, 0.1);
+
+    box-shadow:
+        0 0 18px rgba(45, 212, 191, 0.25);
+
+    animation: favorite-heart-pop 0.3s ease;
+}
+
+
+@keyframes favorite-heart-pop {
+
+    0% {
+        transform: scale(0.75);
+    }
+
+    60% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ---------- META ---------- */
+
+.destination-meta {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+.destination-location {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 14px;
+}
+
+
+.destination-location i {
+    color: #5eead4;
+
+    margin-right: 5px;
+}
+
+
+.destination-category {
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    background: rgba(45, 212, 191, 0.1);
+
+    border: 1px solid rgba(45, 212, 191, 0.25);
+
+    color: #5eead4;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+.destination-description {
+    min-height: 72px;
+
+    margin-bottom: 20px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* ---------- INFORMATION ---------- */
+
+.destination-info {
+    padding: 16px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+}
+
+
+.destination-info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+.destination-info-item > span:first-child {
+    flex-shrink: 0;
+}
+
+
+.hidden-gem-info {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* ---------- EXPLORE BUTTON ---------- */
+
+.destination-explore-btn {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 17px;
+
+    border: 1px solid rgba(94, 234, 212, 0.22);
+
+    border-radius: 13px;
+
+    background: rgba(45, 212, 191, 0.05);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.destination-explore-btn i {
+    color: #5eead4;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.destination-explore-btn:hover {
+    color: #ffffff;
+
+    background: rgba(45, 212, 191, 0.11);
+
+    border-color: rgba(94, 234, 212, 0.55);
+
+    transform: translateY(-1px);
+}
+
+
+.destination-explore-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .destination-card-body {
+        padding: 21px;
+    }
+
+    .destination-name {
+        font-size: 22px;
+    }
+
+    .destination-description {
+        min-height: auto;
+    }
+
+}

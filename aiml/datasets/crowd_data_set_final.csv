@@ -1,0 +1,10 @@
+state,destination,month,day_of_week,best_season,peak_month,crowd_level
+Odisha,Puri,June,Saturday,Summer,June,Very High
+Odisha,Konark,January,Saturday,Winter,January,High
+Odisha,Balighai Beach,January,Saturday,Winter,January,Medium
+Meghalaya,Shillong,April,Saturday,Summer,April,High
+Meghalaya,Sohra,July,Saturday,Monsoon,July,High
+Meghalaya,Laitlum Canyon,October,Saturday,Autumn,October,Low
+Himachal Pradesh,Shimla,April,Saturday,Summer,April,High
+Himachal Pradesh,Mashobra,April,Saturday,Summer,April,Low
+Himachal Pradesh,Chichoga,May,Saturday,Summer,May,Low

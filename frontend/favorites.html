@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Favorites | TourSphere</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Your existing stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="favorites-page">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+            <div class="container-fluid px-4">
+
+                <a class="navbar-brand" href="index.html">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </span>
+                    TourSphere
+                </a>
+
+                <div class="collapse navbar-collapse justify-content-end">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="explore.html">
+                                Explore
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="favorites.html">
+                                Favorites
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#hidden-gems">
+                                Hidden Gems
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#about">
+                                About
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ================= FAVORITES HERO ================= -->
+
+        <section class="favorites-hero">
+
+            <div class="container">
+
+                <span class="favorites-label">
+                    <i class="fa-solid fa-heart"></i>
+                    YOUR JOURNEY
+                </span>
+
+                <h1>
+                    Your
+                    <span>Favorites.</span>
+                </h1>
+
+                <p>
+                    Keep the places that caught your eye.
+                    Come back anytime and continue planning your adventure.
+                </p>
+
+            </div>
+
+        </section>
+
+
+               <!-- ================= SAVED FAVORITES ================= -->
+
+<section class="favorites-content">
+
+    <div class="container">
+
+        <div
+            id="favoritesGrid"
+            class="row g-4"
+        ></div>
+
+        <div
+            id="favoritesEmpty"
+            class="favorites-empty"
+        >
+
+            <div class="empty-icon">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <h3>
+                Nothing saved yet.
+            </h3>
+
+            <p>
+                Found somewhere interesting?
+                Save it here and come back whenever you're ready.
+            </p>
+
+            <a
+                href="explore.html"
+                class="favorites-btn"
+            >
+                Explore Destinations
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+        </section>
+
+    </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const favoritesGrid =
+        document.getElementById("favoritesGrid");
+
+    const favoritesEmpty =
+        document.getElementById("favoritesEmpty");
+
+
+    function getFavorites() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("tourSphereFavorites")
+            ) || [];
+
+        } catch (error) {
+
+            console.error(
+                "Could not load favorites:",
+                error
+            );
+
+            return [];
+        }
+    }
+
+
+    function saveFavorites(favorites) {
+
+        localStorage.setItem(
+            "tourSphereFavorites",
+            JSON.stringify(favorites)
+        );
+    }
+
+
+    function renderFavorites() {
+
+        const favorites = getFavorites();
+
+        if (!favorites.length) {
+
+            favoritesGrid.innerHTML = "";
+
+            favoritesEmpty.style.display = "block";
+
+            return;
+        }
+
+
+        favoritesEmpty.style.display = "none";
+
+
+        favoritesGrid.innerHTML = favorites.map(dest => `
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="destination-card-modern">
+
+                    <div class="destination-card-body">
+
+                        <div class="destination-title-row">
+
+                            <h4 class="destination-name">
+                                ${escapeHtml(dest.place_name)}
+                            </h4>
+
+                            <button
+                                class="favorite-heart-btn is-favorite"
+                                type="button"
+                                onclick="removeFavorite('${String(dest.id).replace(/'/g, "\\'")}')"
+                                aria-label="Remove ${escapeHtml(dest.place_name)} from favorites"
+                            >
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="destination-meta">
+
+                            <span class="destination-location">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                ${escapeHtml(dest.state)}
+
+                            </span>
+
+
+                            <span class="destination-category">
+
+                                ${escapeHtml(
+                                    dest.category || "Destination"
+                                )}
+
+                            </span>
+
+                        </div>
+
+
+                        <p class="destination-description">
+
+                            ${escapeHtml(
+                                dest.description ||
+                                "No description available."
+                            )}
+
+                        </p>
+
+
+                        <div class="destination-info">
+
+                            <div class="destination-info-item">
+                                <span>💰</span>
+                                <span>
+                                    ${escapeHtml(
+                                        dest.estimate_budget ||
+                                        "Budget not specified"
+                                    )}
+                                </span>
+                            </div>
+
+
+                            <div class="destination-info-item">
+                                <span>👥</span>
+                                <span>
+                                    Crowd:
+                                    ${escapeHtml(
+                                        dest.crowd_level ||
+                                        "Unknown"
+                                    )}
+                                </span>
+                            </div>
+
+
+                            <div class="destination-info-item">
+                                <span>⭐</span>
+                                <span>
+                                    Rating:
+                                    ${escapeHtml(
+                                        dest.rating ||
+                                        "Not rated"
+                                    )}
+                                </span>
+                            </div>
+
+
+                            ${
+                                dest.hidden_gem
+                                    ? `
+                                        <div class="destination-info-item hidden-gem-info">
+                                            <span>💎</span>
+                                            <span>
+                                                Hidden gem:
+                                                ${escapeHtml(
+                                                    dest.hidden_gem
+                                                )}
+                                            </span>
+                                        </div>
+                                      `
+                                    : ""
+                            }
+
+                        </div>
+
+
+                        <a
+                            href="destination.html?id=${encodeURIComponent(dest.id)}"
+                            class="destination-explore-btn"
+                        >
+
+                            <span>
+                                Explore Destination
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `).join("");
+    }
+
+
+    function escapeHtml(value) {
+
+        return String(value ?? "")
+            .replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            }[char]));
+    }
+
+
+    window.removeFavorite = function(id) {
+
+        const favorites = getFavorites();
+
+        const updatedFavorites =
+            favorites.filter(
+                item => String(item.id) !== String(id)
+            );
+
+        saveFavorites(updatedFavorites);
+
+        renderFavorites();
+    };
+
+
+    renderFavorites();
+
+});
+
+</script>
+<script>
+document.querySelectorAll('a[href="index.html"]').forEach(link => {
+    link.addEventListener("click", () => {
+        sessionStorage.setItem("tsSkipHomeLoader", "true");
+    });
+});
+</script>
+
+</body>
+
+</html>

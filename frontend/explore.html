@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore | TourSphere</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- TourSphere CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+     <div class="explore-cinematic">
+        <div
+        class="explore-cinematic-image"></div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg fixed-top explore-navbar">
+        <div class="container-fluid px-4">
+
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-icon">
+                    <i class="fa-solid fa-compass"></i>
+                </span>
+                TourSphere
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#exploreNavbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="exploreNavbar"
+            >
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="explore.html">
+                            Explore
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            Favorites
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#hidden-gems">
+                            Hidden Gems
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">
+                            About
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- ================= EXPLORE HERO ================= -->
+
+    <section class="explore-hero">
+
+        <div class="explore-hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="explore-hero-content">
+
+                <span class="explore-tag">
+                    <i class="fa-solid fa-earth-asia"></i>
+                    DISCOVER INDIA
+                </span>
+
+                <h1>
+                    Explore Beyond<br>
+                    <span>the Ordinary.</span>
+                </h1>
+
+                <p>
+                    Discover destinations, experiences and stories
+                    that go beyond the usual tourist trail.
+                </p>
+
+            </div>
+
+        </div>
+    
+
+    </section>
+
+
+    <!-- ================= STATE SELECTION ================= -->
+
+    <section class="explore-selection">
+
+        <div class="container">
+
+            <div class="explore-heading">
+
+                <span class="section-tag">
+                    CHOOSE YOUR DESTINATION
+                </span>
+
+                <h2>
+                    Where do you want to go?
+                </h2>
+
+                <p>
+                    Select a state and discover what makes it worth
+                    experiencing.
+                </p>
+
+            </div>
+
+
+            <div class="state-grid">
+
+                <!-- ODISHA -->
+
+                <div class="state-card">
+
+                    <div class="state-image">
+                        <img
+                            src="images/odisha.jpg"
+                            alt="Odisha"
+                        >
+                    </div>
+
+                    <div class="state-content">
+
+                        <span class="state-label">
+                            EAST INDIA
+                        </span>
+
+                        <h3>Odisha</h3>
+
+                        <p>
+                            Ancient temples, golden beaches,
+                            vibrant culture and peaceful coastal escapes.
+                        </p>
+
+                        <button class="explore-state-btn" data-state="Odisha">
+                            Explore Odisha
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEGHALAYA -->
+
+                <div class="state-card">
+
+                    <div class="state-image">
+                        <img
+                            src="images/Meghalaya.jpg"
+                            alt="Meghalaya"
+                        >
+                    </div>
+
+                    <div class="state-content">
+
+                        <span class="state-label">
+                            NORTHEAST INDIA
+                        </span>
+
+                        <h3>Meghalaya</h3>
+
+                        <p>
+                            Misty mountains, waterfalls, living root
+                            bridges and unforgettable natural landscapes.
+                        </p>
+
+                        <button class="explore-state-btn" data-state="Meghalaya">
+                            Explore Meghalaya
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+                <!-- HIMACHAL PRADESH -->
+
+<div class="state-card">
+
+    <div class="state-image">
+        <img src="images/himachal.jpg" alt="Himachal Pradesh">
+    </div>
+
+    <div class="state-content">
+
+        <span class="state-label">
+            NORTH INDIA
+        </span>
+
+        <h3>Himachal Pradesh</h3>
+
+        <p>
+            Snow-covered mountains, peaceful valleys,
+            scenic villages and unforgettable adventures.
+        </p>
+
+        <button class="explore-state-btn" data-state="Himachal Pradesh">
+            Explore Himachal
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESTINATION AREA ================= -->
+
+    <section class="destination-area">
+
+        <div class="container">
+
+            <div class="destination-placeholder" id="destinationResults">
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    YOUR DESTINATION
+                </span>
+
+                <h2>
+                    Select a state above
+                </h2>
+
+                <p>
+                    Your destination overview, popular places,
+                    hidden gems and travel information will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/explore.js"></script>
+    <script>
+document.querySelectorAll('a[href="index.html"]').forEach(link => {
+    link.addEventListener("click", () => {
+        sessionStorage.setItem("tsSkipHomeLoader", "true");
+    });
+});
+</script>
+</body>
+</html>
