@@ -443,25 +443,27 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-    const translationResponse = await axios.post(
-      'https://translate.argosopentech.com/translate',
-      {
-        q: text,
-        source: 'en',
-        target: targetLanguage,
-        format: 'text'
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        timeout: 30000
-      }
-    );
+const translationResponse = await axios.get(
+  'https://translate.googleapis.com/translate_a/single',
+  {
+    params: {
+      client: 'gtx',
+      sl: 'en',
+      tl: targetLanguage,
+      dt: 't',
+      q: text
+    },
+    timeout: 15000
+  }
+);
 
-    const translatedText =
-      translationResponse.data?.translatedText;
+const translatedText =
+  translationResponse.data?.[0]
+    ?.map(item => item?.[0] || '')
+    .join('')
+    .trim();
 
+    
     if (!translatedText) {
       return res.status(500).json({
         success: false,
