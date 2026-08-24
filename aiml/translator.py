@@ -1,7 +1,7 @@
 import requests
 
 
-LIBRETRANSLATE_URL = "https://translate.argosopentech.com/translate"
+LIBRETRANSLATE_URL = "https://translate.terraprint.co/translate"
 
 
 SUPPORTED_LANGUAGES = {
