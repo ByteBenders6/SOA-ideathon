@@ -392,181 +392,106 @@ app.get('/api/route', async (req, res) => {
 // =============================================
 // API 5: TRANSLATE (Google Translate)
 // =============================================
-// =========================================================
+// =============================================
 // API 5: TRANSLATE
-// MyMemory Translation API
-// =========================================================
+// LibreTranslate
+// =============================================
 
 app.get('/api/translate', async (req, res) => {
+  try {
 
-    try {
+    const { text, target = 'hi' } = req.query;
 
-        const { text, target = 'hi' } = req.query;
-
-
-        // -----------------------------------------
-        // Validate input
-        // -----------------------------------------
-
-        if (!text || !text.trim()) {
-
-            return res.status(400).json({
-                success: false,
-                error: 'Text to translate is required.'
-            });
-
-        }
-
-
-        // -----------------------------------------
-        // Supported target languages
-        // -----------------------------------------
-
-        const supportedLanguages = {
-
-            en: 'English',
-            hi: 'Hindi',
-            or: 'Odia',
-            ta: 'Tamil',
-            te: 'Telugu',
-            kn: 'Kannada',
-            ml: 'Malayalam',
-            bn: 'Bengali',
-            mr: 'Marathi',
-            gu: 'Gujarati',
-            pa: 'Punjabi',
-            as: 'Assamese',
-
-            // Extra languages for the Home translator
-            fr: 'French',
-            es: 'Spanish',
-            de: 'German'
-        };
-
-
-        const targetLanguage =
-            String(target).trim().toLowerCase();
-
-
-        if (!supportedLanguages[targetLanguage]) {
-
-            return res.status(400).json({
-                success: false,
-                error:
-                    `Unsupported target language: ${targetLanguage}`
-            });
-
-        }
-
-
-        // -----------------------------------------
-        // Same language
-        // -----------------------------------------
-
-        if (targetLanguage === 'en') {
-
-            return res.json({
-
-                success: true,
-
-                original: text,
-
-                translated: text,
-
-                target: targetLanguage
-
-            });
-
-        }
-
-
-        // -----------------------------------------
-        // MyMemory Translation API
-        // English → selected language
-        // -----------------------------------------
-
-        const translationResponse =
-            await axios.get(
-                'https://api.mymemory.translated.net/get',
-                {
-                    params: {
-
-                        q: text,
-
-                        langpair:
-                            `en|${targetLanguage}`,
-
-                        mt: 1
-
-                    },
-
-                    timeout: 15000
-                }
-            );
-
-
-        const translatedText =
-            translationResponse
-                .data
-                ?.responseData
-                ?.translatedText;
-
-
-        // -----------------------------------------
-        // Check translation
-        // -----------------------------------------
-
-        if (!translatedText) {
-
-            return res.status(500).json({
-
-                success: false,
-
-                error:
-                    'Translation service returned no translation.'
-
-            });
-
-        }
-
-
-        // -----------------------------------------
-        // Send result to frontend
-        // -----------------------------------------
-
-        return res.json({
-
-            success: true,
-
-            original: text,
-
-            translated: translatedText,
-
-            target: targetLanguage
-
-        });
-
-
-    } catch (error) {
-
-        console.error(
-            'Translation API error:',
-            error.message
-        );
-
-
-        return res.status(500).json({
-
-            success: false,
-
-            error:
-                'Translation service is currently unavailable.'
-
-        });
-
+    if (!text || !text.trim()) {
+      return res.status(400).json({
+        success: false,
+        error: 'Text to translate is required.'
+      });
     }
 
+    const supportedLanguages = {
+      en: 'English',
+      hi: 'Hindi',
+      or: 'Odia',
+      ta: 'Tamil',
+      te: 'Telugu',
+      kn: 'Kannada',
+      ml: 'Malayalam',
+      bn: 'Bengali',
+      mr: 'Marathi',
+      gu: 'Gujarati',
+      pa: 'Punjabi',
+      as: 'Assamese'
+    };
+
+    const targetLanguage = String(target).trim().toLowerCase();
+
+    if (!supportedLanguages[targetLanguage]) {
+      return res.status(400).json({
+        success: false,
+        error: `Unsupported target language: ${targetLanguage}`
+      });
+    }
+
+    // English → English
+    if (targetLanguage === 'en') {
+      return res.json({
+        success: true,
+        original: text,
+        translated: text,
+        target: targetLanguage
+      });
+    }
+
+    const translationResponse = await axios.post(
+      'https://translate.argosopentech.com/translate',
+      {
+        q: text,
+        source: 'en',
+        target: targetLanguage,
+        format: 'text'
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        timeout: 30000
+      }
+    );
+
+    const translatedText =
+      translationResponse.data?.translatedText;
+
+    if (!translatedText) {
+      return res.status(500).json({
+        success: false,
+        error: 'Translation service returned no translation.'
+      });
+    }
+
+    return res.json({
+      success: true,
+      original: text,
+      translated: translatedText,
+      target: targetLanguage
+    });
+
+  } catch (error) {
+
+    console.error(
+      'Translation API error:',
+      error.response?.status || error.message
+    );
+
+    return res.status(500).json({
+      success: false,
+      error:
+        'Translation service is currently unavailable.'
+    });
+  }
 });
+
+
 
 // =============================================
 // DASHBOARD WITH 5 APIS
