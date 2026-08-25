@@ -399,7 +399,6 @@ app.get('/api/route', async (req, res) => {
 
 app.get('/api/translate', async (req, res) => {
   try {
-
     const { text, target = 'hi' } = req.query;
 
     if (!text || !text.trim()) {
@@ -425,10 +424,11 @@ app.get('/api/translate', async (req, res) => {
       fr: 'French',
       es: 'Spanish',
       de: 'German'
-
     };
 
-    const targetLanguage = String(target).trim().toLowerCase();
+    const targetLanguage = String(target)
+      .trim()
+      .toLowerCase();
 
     if (!supportedLanguages[targetLanguage]) {
       return res.status(400).json({
@@ -447,25 +447,31 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-  
-  const translationResponse = await axios.post(
-    'https://translate.flossboxin.org.in/translate',
-  {
-    q: text,
-    source: 'en',
-    target: targetLanguage,
-    format: 'text'
-  },
-  {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    timeout: 15000
-  }
-);
+    // Google Translate unofficial endpoint
+    const googleUrl =
+      'https://translate.googleapis.com/translate_a/single';
 
-    const translatedText =
-  translationResponse.data?.translatedText?.trim();
+    const response = await axios.get(googleUrl, {
+      params: {
+        client: 'gtx',
+        sl: 'en',
+        tl: targetLanguage,
+        dt: 't',
+        q: text
+      },
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
+          'AppleWebKit/537.36 (KHTML, like Gecko) ' +
+          'Chrome/131.0.0.0 Safari/537.36'
+      },
+      timeout: 15000
+    });
+
+    const translatedText = response.data?.[0]
+      ?.map(item => item?.[0] || '')
+      .join('')
+      .trim();
 
     if (!translatedText) {
       return res.status(500).json({
