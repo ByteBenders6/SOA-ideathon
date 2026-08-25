@@ -449,7 +449,7 @@ app.get('/api/translate', async (req, res) => {
 
   
   const translationResponse = await axios.post(
-    'https://translate.mentality.rip/translate',
+    'https://translate.flossboxin.org.in/translate',
   {
     q: text,
     source: 'en',
