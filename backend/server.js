@@ -448,8 +448,8 @@ app.get('/api/translate', async (req, res) => {
     }
 
   
-    const translationResponse = await axios.post(
-  'https://libretranslate.de/translate',
+  const translationResponse = await axios.post(
+    'https://translate.mentality.rip/translate',
   {
     q: text,
     source: 'en',
