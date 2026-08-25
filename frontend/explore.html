@@ -286,7 +286,7 @@
 
     <script src="js/explore.js"></script>
     <script>
-document.querySelectorAll('a[href="index.html"]').forEach(link => {
+document.querySelectorAll('a[href^="index.html"]').forEach(link => {
     link.addEventListener("click", () => {
         sessionStorage.setItem("tsSkipHomeLoader", "true");
     });
