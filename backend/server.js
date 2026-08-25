@@ -3,8 +3,6 @@ const cors = require('cors');
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const axios = require('axios');
-const dns = require('dns');
-const https = require('https');
 const path = require('path');
 
 const app = express();
@@ -435,7 +433,7 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-    // English -> English
+    // English → English
     if (targetLanguage === 'en') {
       return res.json({
         success: true,
@@ -445,183 +443,32 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-    /*
-     * Force IPv4.
-     * Render has previously shown IPv6 connection errors,
-     * so this avoids that problem.
-     */
-    const ipv4Agent = new https.Agent({
-      lookup: (hostname, options, callback) => {
-        dns.lookup(
-          hostname,
-          { family: 4 },
-          callback
-        );
+    // MyMemory - no API key required
+    const response = await axios.get(
+      'https://api.mymemory.translated.net/get',
+      {
+        params: {
+          q: text.trim(),
+          langpair: `en|${targetLanguage}`,
+          mt: 1
+        },
+        timeout: 15000
       }
-    });
+    );
 
-    /*
-     * =====================================================
-     * TRANSLATION SERVICES
-     * =====================================================
-     *
-     * We try several keyless services.
-     * If one is down, the next one is tried automatically.
-     */
+    const translatedText =
+      response.data?.responseData?.translatedText?.trim();
 
-    const translationServices = [
-
-      // 1. MyMemory
-      async () => {
-        const response = await axios.get(
-          'https://api.mymemory.translated.net/get',
-          {
-            params: {
-              q: text.trim(),
-              langpair: `en|${targetLanguage}`,
-              mt: 1
-            },
-            httpsAgent: ipv4Agent,
-            timeout: 10000
-          }
-        );
-
-        const translated =
-          response.data?.responseData?.translatedText?.trim();
-
-        if (!translated) {
-          throw new Error('MyMemory returned no translation');
-        }
-
-        return translated;
-      },
-
-      // 2. LibreTranslate Germany
-      async () => {
-        const response = await axios.post(
-          'https://libretranslate.de/translate',
-          {
-            q: text.trim(),
-            source: 'en',
-            target: targetLanguage,
-            format: 'text'
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            httpsAgent: ipv4Agent,
-            timeout: 10000
-          }
-        );
-
-        const translated =
-          response.data?.translatedText?.trim();
-
-        if (!translated) {
-          throw new Error('LibreTranslate DE returned no translation');
-        }
-
-        return translated;
-      },
-
-      // 3. Skitzen LibreTranslate mirror
-      async () => {
-        const response = await axios.post(
-          'https://translate.api.skitzen.com/translate',
-          {
-            q: text.trim(),
-            source: 'en',
-            target: targetLanguage,
-            format: 'text'
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            httpsAgent: ipv4Agent,
-            timeout: 10000
-          }
-        );
-
-        const translated =
-          response.data?.translatedText?.trim();
-
-        if (!translated) {
-          throw new Error('Skitzen returned no translation');
-        }
-
-        return translated;
-      },
-
-      // 4. Zillyhuhn LibreTranslate mirror
-      async () => {
-        const response = await axios.post(
-          'https://trans.zillyhuhn.com/translate',
-          {
-            q: text.trim(),
-            source: 'en',
-            target: targetLanguage,
-            format: 'text'
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            httpsAgent: ipv4Agent,
-            timeout: 10000
-          }
-        );
-
-        const translated =
-          response.data?.translatedText?.trim();
-
-        if (!translated) {
-          throw new Error('Zillyhuhn returned no translation');
-        }
-
-        return translated;
-      }
-    ];
-
-    /*
-     * Try each service until one works.
-     */
-    let translatedText = null;
-    const errors = [];
-
-    for (const service of translationServices) {
-      try {
-        translatedText = await service();
-
-        if (translatedText) {
-          break;
-        }
-
-      } catch (serviceError) {
-        errors.push(serviceError.message);
-      }
-    }
-
-    /*
-     * Nothing worked.
-     */
-    if (!translatedText) {
-      console.error(
-        'All translation services failed:',
-        errors
-      );
-
+    if (
+      !translatedText ||
+      response.data?.quotaFinished === true
+    ) {
       return res.status(503).json({
         success: false,
-        error: 'All translation services are currently unavailable.',
-        details: errors
+        error: 'Translation service is temporarily unavailable.'
       });
     }
 
-    /*
-     * Success
-     */
     return res.json({
       success: true,
       original: text,
@@ -633,12 +480,12 @@ app.get('/api/translate', async (req, res) => {
 
     console.error(
       'Translation API error:',
-      error.message
+      error.response?.data || error.message
     );
 
     return res.status(500).json({
       success: false,
-      error: error.message
+      error: 'Translation service is currently unavailable.'
     });
   }
 });
