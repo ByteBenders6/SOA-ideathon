@@ -448,20 +448,24 @@ app.get('/api/translate', async (req, res) => {
     }
 
   
-    const translationResponse = await axios.get(
-      'https://api.mymemory.translated.net/get',
-      {
-        params: {
-          q: text,
-          langpair: `en|${targetLanguage}`
-        },
-        timeout: 15000
-      }
-    );
+    const translationResponse = await axios.post(
+  'https://libretranslate.de/translate',
+  {
+    q: text,
+    source: 'en',
+    target: targetLanguage,
+    format: 'text'
+  },
+  {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    timeout: 15000
+  }
+);
 
     const translatedText =
-      translationResponse.data?.responseData?.translatedText
-        ?.trim();
+  translationResponse.data?.translatedText?.trim();
 
     if (!translatedText) {
       return res.status(500).json({
