@@ -447,27 +447,22 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-const translationResponse = await axios.get(
-  'https://translate.googleapis.com/translate_a/single',
-  {
-    params: {
-      client: 'gtx',
-      sl: 'en',
-      tl: targetLanguage,
-      dt: 't',
-      q: text
-    },
-    timeout: 15000
-  }
-);
+  
+    const translationResponse = await axios.get(
+      'https://api.mymemory.translated.net/get',
+      {
+        params: {
+          q: text,
+          langpair: `en|${targetLanguage}`
+        },
+        timeout: 15000
+      }
+    );
 
-const translatedText =
-  translationResponse.data?.[0]
-    ?.map(item => item?.[0] || '')
-    .join('')
-    .trim();
+    const translatedText =
+      translationResponse.data?.responseData?.translatedText
+        ?.trim();
 
-    
     if (!translatedText) {
       return res.status(500).json({
         success: false,
@@ -491,8 +486,7 @@ const translatedText =
 
     return res.status(500).json({
       success: false,
-      error:
-        'Translation service is currently unavailable.'
+      error: 'Translation service is currently unavailable.'
     });
   }
 });
