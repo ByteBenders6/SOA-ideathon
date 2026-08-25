@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const axios = require('axios');
 const path = require('path');
-
+const { translate } = require("google-translate-api-browser");
 dotenv.config();
 
 const app = express();
@@ -445,26 +445,20 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-    // Keyless Google Translate endpoint
+    // MyMemory translation - no API key required
     const translationResponse = await axios.get(
-      'https://translate.googleapis.com/translate_a/single',
+      'https://api.mymemory.translated.net/get',
       {
         params: {
-          client: 'gtx',
-          sl: 'en',
-          tl: targetLanguage,
-          dt: 't',
-          q: text
+          q: text.trim(),
+          langpair: `en|${targetLanguage}`
         },
         timeout: 15000
       }
     );
 
     const translatedText =
-      translationResponse.data?.[0]
-        ?.map(item => item?.[0] || '')
-        .join('')
-        .trim();
+      translationResponse.data?.responseData?.translatedText?.trim();
 
     if (!translatedText) {
       return res.status(500).json({
@@ -481,19 +475,16 @@ app.get('/api/translate', async (req, res) => {
     });
 
   } catch (error) {
-
-    console.error(
-      'Translation API error:',
-      error.response?.status || error.message
-    );
+    console.error('Translation API error:', error);
 
     return res.status(500).json({
       success: false,
-      error: 'Translation service is currently unavailable.'
+      error: error.message,
+      status: error.response?.status || null,
+      details: error.response?.data || null
     });
   }
 });
-
 
 
 // =============================================
