@@ -443,29 +443,37 @@ app.get('/api/translate', async (req, res) => {
       });
     }
 
-    // MyMemory - no API key required
+    // MyMemory translation
     const response = await axios.get(
-  'https://api.mymemory.translated.net/get',
-  {
-    params: {
-      q: text.trim(),
-      langpair: `en|${targetLanguage}`,
-      de: 'bytebenders6@gmail.com'
-    },
-    timeout: 15000
-  }
-);
+      'https://api.mymemory.translated.net/get',
+      {
+        params: {
+          q: text.trim(),
+          langpair: `en|${targetLanguage}`,
+          mt: 1,
+          de: 'bytebenders6@gmail.com'
+        },
+        timeout: 15000
+      }
+    );
 
     const translatedText =
       response.data?.responseData?.translatedText?.trim();
 
-    if (
-      !translatedText ||
-      response.data?.quotaFinished === true
-    ) {
+    console.log('Translation response:', response.data);
+
+    if (!translatedText) {
       return res.status(503).json({
         success: false,
-        error: 'Translation service is temporarily unavailable.'
+        error: 'Translation service returned no translation.'
+      });
+    }
+
+    // MyMemory quota exhausted
+    if (response.data?.quotaFinished === true) {
+      return res.status(429).json({
+        success: false,
+        error: 'Daily translation limit reached. Please try again later.'
       });
     }
 
@@ -477,7 +485,6 @@ app.get('/api/translate', async (req, res) => {
     });
 
   } catch (error) {
-
     console.error(
       'Translation API error:',
       error.response?.data || error.message
