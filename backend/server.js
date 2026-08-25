@@ -445,16 +445,16 @@ app.get('/api/translate', async (req, res) => {
 
     // MyMemory - no API key required
     const response = await axios.get(
-      'https://api.mymemory.translated.net/get',
-      {
-        params: {
-          q: text.trim(),
-          langpair: `en|${targetLanguage}`,
-          mt: 1
-        },
-        timeout: 15000
-      }
-    );
+  'https://api.mymemory.translated.net/get',
+  {
+    params: {
+      q: text.trim(),
+      langpair: `en|${targetLanguage}`,
+      de: 'bytebenders6@gmail.com'
+    },
+    timeout: 15000
+  }
+);
 
     const translatedText =
       response.data?.responseData?.translatedText?.trim();
