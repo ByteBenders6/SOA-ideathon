@@ -839,30 +839,40 @@ transform:translateY(0);
 
     margin-bottom:35px;
 }
-.planner-btn{
-
-    padding:14px 22px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.35s;
+.planner-instructions{
+    text-align: center;
+    margin: 10px 0 35px;
 }
+.instructions-title{
+    color: #b8c591;
+    font-size: 15px;
+    margin-bottom: 18px;
+    letter-spacing: .3px;
+}
+.instructions-items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:12px;
+}
+.instructions-items span{
+    padding: 9px 16px;
+    border-radius: 50px;
 
-.planner-btn:hover{
-
-    background:#2dd4bf;
-
-    color:#07111d;
-
-    transform:translateY(-4px);
+    color: #67e8f9;
+    font-size: 14px;
+    background: rgba(45,212,191,.07);
+    border: 1px solid rgba(45, 212, 191, .22);
+    box-shadow: 0 0 12px rgba(45, 212, 191, .06);
+    user-select: none;
+}
+.instruction-example{
+    margin-top: 18px;
+    color:rgba(255, 255, 255, .45);
+    font-size: 13px;
+}
+.instruction-example span{
+    color:rgba(255, 255, 255, .7);
 }
 
 .generate-btn{
