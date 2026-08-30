@@ -59,6 +59,64 @@ async function loadDestination() {
 function displayDestination(data) {
 
     const destination = data.destination || {};
+    // ==================================================
+// DESTINATION HERO IMAGE
+// ==================================================
+
+const destinationHeroImages = {
+
+    "Puri": "images/destinations/puri.jpg",
+
+    "Konark": "images/destinations/konark.jpg",
+
+    "Balighai Beach": "images/destinations/balighai.jpg",
+
+    "Shillong": "images/destinations/shillong.jpg",
+
+    "Sohra": "images/destinations/sohra.jpg",
+
+    "Laitlum Canyon": "images/destinations/laitlum.jpg",
+
+    "Shimla": "images/destinations/shimla.jpg",
+
+    "Mashobra": "images/destinations/mashobra.jpg",
+
+    "Chichoga": "images/destinations/chichoga.jpg"
+
+};
+
+
+const heroImage =
+    document.getElementById(
+        "destinationHeroImage"
+    );
+
+
+if (heroImage && destination.name) {
+
+    const imagePath =
+        destinationHeroImages[
+            destination.name
+        ];
+
+    if (imagePath) {
+
+        heroImage.src =
+            imagePath;
+
+        heroImage.alt =
+            destination.name;
+
+    } else {
+
+        console.warn(
+            "No hero image configured for:",
+            destination.name
+        );
+
+    }
+
+}
     const recommendation = data.recommendation || {};
     const crowd = data.crowd || {};
     const road = data.road || {};

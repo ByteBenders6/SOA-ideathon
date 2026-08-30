@@ -4703,3 +4703,261 @@ body .custom-navbar .nav-link {
     }
 
 }
+
+/* =========================================================
+   TOURSPHERE CINEMATIC DESTINATION HERO
+   ========================================================= */
+
+.destination-header {
+    position: relative;
+    min-height: 560px;
+    padding: 150px 0 90px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #07111f 0%,
+            #07111f 25%,
+            rgba(7,17,31,0.96) 42%,
+            rgba(7,17,31,0.55) 62%,
+            rgba(7,17,31,0.15) 82%,
+            #07111f 100%
+        ),
+        linear-gradient(
+            180deg,
+            #07111f 0%,
+            #091827 100%
+        );
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.destination-hero-image {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 72%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+.destination-hero-image img {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0;
+
+    transform: scale(1.02);
+
+    animation:
+        destinationImageFadeIn
+        1.8s
+        ease-out
+        forwards;
+}
+
+
+/* =========================================================
+   LEFT → RIGHT IMAGE BLEND
+   ========================================================= */
+
+.destination-hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #07111f 0%,
+            rgba(7,17,31,0.98) 8%,
+            rgba(7,17,31,0.90) 20%,
+            rgba(7,17,31,0.62) 35%,
+            rgba(7,17,31,0.25) 55%,
+            rgba(7,17,31,0.05) 75%,
+            rgba(7,17,31,0) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP / BOTTOM BLENDING
+   ========================================================= */
+
+.destination-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07111f 0%,
+            rgba(7,17,31,0.18) 18%,
+            rgba(7,17,31,0) 45%,
+            rgba(7,17,31,0.15) 75%,
+            #07111f 100%
+        );
+}
+
+
+/* =========================================================
+   CONTENT ABOVE IMAGE
+   ========================================================= */
+
+.destination-header-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   IMAGE FADE-IN
+   ========================================================= */
+
+@keyframes destinationImageFadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 0.92;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   KEEP TEXT ON LEFT
+   ========================================================= */
+
+.destination-title {
+    position: relative;
+
+    max-width: 650px;
+
+    z-index: 3;
+}
+
+
+.destination-title h1 {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.destination-title p {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   DESKTOP IMAGE POSITION
+   ========================================================= */
+
+@media (min-width: 1001px) {
+
+    .destination-hero-image {
+        width: 70%;
+        right: 0;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .destination-header {
+        min-height: 560px;
+    }
+
+    .destination-hero-image {
+        width: 75%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .destination-header {
+        min-height: 600px;
+
+        padding:
+            125px
+            20px
+            70px;
+    }
+
+    .destination-hero-image {
+
+        width: 100%;
+
+        height: 100%;
+
+        opacity: 0.65;
+    }
+
+    .destination-hero-image::after {
+
+        background:
+            linear-gradient(
+                90deg,
+                #07111f 0%,
+                rgba(7,17,31,0.82) 35%,
+                rgba(7,17,31,0.35) 70%,
+                rgba(7,17,31,0.10) 100%
+            );
+    }
+
+    .destination-title {
+
+        max-width: 100%;
+    }
+
+}
